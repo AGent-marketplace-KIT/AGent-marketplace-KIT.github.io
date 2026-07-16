@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>404 — agkit</title>
+	<meta name="robots" content="noindex" />
+	<meta name="theme-color" content="#0B0F19" />
+	<link rel="icon" type="image/svg+xml" href="/assets/agkit.svg" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+	<style>
+		* { box-sizing: border-box; }
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: #0B0F19;
+			color: #e7eaf3;
+			font-family: "Inter", sans-serif;
+			text-align: center;
+		}
+		main { padding: 24px; }
+		.mark { width: 110px; height: 110px; filter: drop-shadow(0 0 26px rgba(168, 85, 247, .4)); }
+		.cursor { animation: blink 1.25s steps(2, jump-none) infinite; }
+		@keyframes blink { 50% { opacity: 0; } }
+		h1 {
+			font-size: clamp(3rem, 9vw, 5rem);
+			font-weight: 900;
+			margin: 18px 0 6px;
+			background: linear-gradient(120deg, #6366f1, #a855f7, #ec4899);
+			-webkit-background-clip: text;
+			background-clip: text;
+			color: transparent;
+		}
+		p { color: #98a2b8; margin: 0 0 26px; }
+		code {
+			font-family: "JetBrains Mono", monospace;
+			color: #c9cdff;
+			background: rgba(99, 102, 241, .12);
+			border: 1px solid rgba(99, 102, 241, .2);
+			border-radius: 6px;
+			padding: .1em .45em;
+		}
+		a.btn {
+			display: inline-block;
+			padding: 12px 26px;
+			border-radius: 10px;
+			background: linear-gradient(120deg, #6366f1, #a855f7, #ec4899);
+			color: #fff;
+			font-weight: 600;
+			text-decoration: none;
+			box-shadow: 0 4px 22px rgba(168, 85, 247, .35);
+		}
+		@media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+	</style>
+</head>
+<body>
+	<main>
+		<svg class="mark" viewBox="0 0 500 500" aria-hidden="true">
+			<defs>
+				<linearGradient id="g" x1="0%" y1="100%" x2="100%" y2="0%">
+					<stop offset="0%" stop-color="#6366f1" /><stop offset="50%" stop-color="#a855f7" /><stop offset="100%" stop-color="#ec4899" />
+				</linearGradient>
+			</defs>
+			<g transform="translate(250, 250)">
+				<path d="M 0 0 L -100 -58 L -100 58 L 0 116 Z" fill="#121826" stroke="url(#g)" stroke-width="10" stroke-linejoin="round" />
+				<path d="M 0 0 L 100 -58 L 100 58 L 0 116 Z" fill="#161e2e" stroke="url(#g)" stroke-width="10" stroke-linejoin="round" />
+				<path d="M 0 0 L -100 -58 L 0 -116 L 100 -58 Z" fill="#0B0F19" stroke="url(#g)" stroke-width="10" stroke-linejoin="round" />
+				<path d="M -60 -93 L 0 -58 L -60 -23" fill="none" stroke="url(#g)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+				<line class="cursor" x1="30" y1="-23" x2="70" y2="-46" stroke="url(#g)" stroke-width="14" stroke-linecap="round" />
+			</g>
+		</svg>
+		<h1>404</h1>
+		<p><code>agkit: command not found</code> — this page doesn't exist.</p>
+		<a class="btn" href="/">Back to the marketplace</a>
+	</main>
+</body>
+</html>
