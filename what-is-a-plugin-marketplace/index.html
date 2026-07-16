@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Primary SEO -->
+	<title>What Is a Plugin Marketplace for AI Coding Agents? — agkit</title>
+	<meta name="description" content="A plugin marketplace is a Git repository holding a catalog of installable plugins for AI coding agents. Learn what a plugin contains, how Claude Code, Copilot, Codex and Cursor consume a marketplace, and how to create one." />
+	<link rel="canonical" href="https://agent-marketplace-kit.github.io/what-is-a-plugin-marketplace/" />
+	<meta name="author" content="fair3n" />
+	<meta name="theme-color" content="#0B0F19" />
+	<meta name="color-scheme" content="dark" />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="article" />
+	<meta property="og:site_name" content="agkit" />
+	<meta property="og:title" content="What Is a Plugin Marketplace for AI Coding Agents?" />
+	<meta property="og:description" content="A Git repository holding a catalog of installable plugins for AI coding agents — what's inside one, how agents consume it, and how to create one." />
+	<meta property="og:url" content="https://agent-marketplace-kit.github.io/what-is-a-plugin-marketplace/" />
+	<meta property="og:image" content="https://agent-marketplace-kit.github.io/assets/og.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:alt" content="agkit — the isometric monolith logo with the tagline: one canonical catalog, every AI coding agent, any Git forge" />
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="What Is a Plugin Marketplace for AI Coding Agents?" />
+	<meta name="twitter:description" content="A Git repository holding a catalog of installable plugins for AI coding agents — what's inside one, how agents consume it, and how to create one." />
+	<meta name="twitter:image" content="https://agent-marketplace-kit.github.io/assets/og.png" />
+
+	<!-- Icons -->
+	<link rel="icon" type="image/svg+xml" href="../assets/agkit.svg" />
+	<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="../assets/style.css" />
+
+	<!-- Structured data: the article -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "TechArticle",
+		"headline": "What is a plugin marketplace for AI coding agents?",
+		"description": "A plugin marketplace is a Git repository holding a catalog of installable plugins for AI coding agents. This guide explains what a plugin contains, how different agents consume a marketplace, and how to create one.",
+		"about": "Plugin marketplaces for AI coding agents",
+		"inLanguage": "en",
+		"url": "https://agent-marketplace-kit.github.io/what-is-a-plugin-marketplace/",
+		"mainEntityOfPage": { "@type": "WebPage", "@id": "https://agent-marketplace-kit.github.io/what-is-a-plugin-marketplace/" },
+		"image": "https://agent-marketplace-kit.github.io/assets/og.png",
+		"author": { "@type": "Person", "name": "fair3n", "url": "https://github.com/fair3n" },
+		"publisher": { "@type": "Person", "name": "fair3n", "url": "https://github.com/fair3n" },
+		"isPartOf": { "@type": "WebSite", "name": "agkit", "url": "https://agent-marketplace-kit.github.io/" }
+	}
+	</script>
+
+	<!-- Structured data: breadcrumbs -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{ "@type": "ListItem", "position": 1, "name": "agkit", "item": "https://agent-marketplace-kit.github.io/" },
+			{ "@type": "ListItem", "position": 2, "name": "What is a plugin marketplace?", "item": "https://agent-marketplace-kit.github.io/what-is-a-plugin-marketplace/" }
+		]
+	}
+	</script>
+
+	<!-- Structured data: page FAQ -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "What is a plugin marketplace for AI coding agents?",
+				"acceptedAnswer": { "@type": "Answer", "text": "A plugin marketplace is a Git repository that holds a catalog file listing installable plugins, alongside the plugin content itself. An AI coding agent reads the catalog, shows the available plugins, and installs the ones a developer picks. It is distribution infrastructure: the catalog says what exists and where to find it, and the agent does the rest." }
+			},
+			{
+				"@type": "Question",
+				"name": "What is the difference between a plugin, a skill and a marketplace?",
+				"acceptedAnswer": { "@type": "Answer", "text": "A skill is one capability — a SKILL.md file the agent loads on demand. A plugin is a versioned bundle that can contain skills, slash commands, subagents, hooks and MCP servers. A marketplace is the catalog that lists many plugins so an agent can discover and install them. Skill is the smallest unit, marketplace the largest." }
+			},
+			{
+				"@type": "Question",
+				"name": "Do I need a marketplace to share a single plugin?",
+				"acceptedAnswer": { "@type": "Answer", "text": "No. A standalone plugin repository is enough, and any catalog can reference it remotely. A marketplace pays off when you maintain several plugins, want one install flow for a team, or need versioning and updates across a set of plugins." }
+			},
+			{
+				"@type": "Question",
+				"name": "Where is a plugin marketplace hosted?",
+				"acceptedAnswer": { "@type": "Answer", "text": "In a plain Git repository — there is no central registry to publish to and no account to create. GitHub, GitLab, Bitbucket, Gitea and self-hosted forges all work, because agents fetch the repository over Git. Consumers add it by URL, or by owner/repo shorthand on GitHub." }
+			}
+		]
+	}
+	</script>
+</head>
+<body>
+
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<!-- Shared gradient definition for the brand mark -->
+	<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+		<defs>
+			<linearGradient id="g-brand" x1="0" y1="0" x2="1" y2="1">
+				<stop offset="0%" stop-color="#6366f1" />
+				<stop offset="50%" stop-color="#a855f7" />
+				<stop offset="100%" stop-color="#ec4899" />
+			</linearGradient>
+		</defs>
+	</svg>
+
+	<header class="nav" id="top">
+		<div class="container nav-inner">
+			<a class="brand" href="../" aria-label="agkit — home">
+				<svg class="brand-mark" viewBox="0 0 500 500" aria-hidden="true" focusable="false">
+					<g transform="translate(250, 250)">
+						<path d="M 0 0 L -100 -58 L -100 58 L 0 116 Z" fill="#121826" stroke="url(#g-brand)" stroke-width="16" stroke-linejoin="round" />
+						<path d="M 0 0 L 100 -58 L 100 58 L 0 116 Z" fill="#161e2e" stroke="url(#g-brand)" stroke-width="16" stroke-linejoin="round" />
+						<path d="M 0 0 L -100 -58 L 0 -116 L 100 -58 Z" fill="#0B0F19" stroke="url(#g-brand)" stroke-width="16" stroke-linejoin="round" />
+						<path d="M -60 -93 L 0 -58 L -60 -23" fill="none" stroke="url(#g-brand)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+						<line x1="30" y1="-23" x2="70" y2="-46" stroke="url(#g-brand)" stroke-width="22" stroke-linecap="round" />
+					</g>
+				</svg>
+				<span class="brand-name">agkit</span>
+			</a>
+			<nav class="nav-links" aria-label="Main navigation">
+				<a href="../#features">Features</a>
+				<a href="../#how-it-works">How it works</a>
+				<a href="../#quickstart">Quick start</a>
+				<a href="../#commands">Commands</a>
+				<a href="../#faq">FAQ</a>
+				<a href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Docs</a>
+			</nav>
+			<div class="nav-cta">
+				<a class="btn btn-ghost btn-sm" href="https://github.com/AGent-marketplace-KIT/cli" target="_blank" rel="noopener" aria-label="agkit on GitHub">
+					<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+					GitHub
+				</a>
+				<a class="btn btn-primary btn-sm" href="https://www.npmjs.com/package/agkit" target="_blank" rel="noopener">npm</a>
+			</div>
+		</div>
+	</header>
+
+	<main id="main">
+
+		<!-- ============================ INTRO ============================ -->
+		<section class="section">
+			<div class="container container-narrow prose">
+				<nav class="crumbs" aria-label="Breadcrumb">
+					<a href="../">agkit</a> <span aria-hidden="true">/</span> <span aria-current="page">What is a plugin marketplace?</span>
+				</nav>
+
+				<h1>What is a <span class="grad-text">plugin marketplace</span> for AI coding agents?</h1>
+
+				<p class="lede">A <strong>plugin marketplace</strong> is a Git repository that holds a <strong>catalog</strong> of installable plugins for AI coding agents, alongside the plugin content itself. The agent reads the catalog, lists what is available, and installs whatever the developer picks.</p>
+
+				<p>That is the whole idea. A marketplace is <em>distribution infrastructure</em>, not a store: nothing is sold, there is no central registry to publish to, and no account to create. The catalog says what exists and where to find it — the agent does the rest.</p>
+
+				<p>This page explains what goes inside a plugin, how the different agents consume a marketplace, and how to create one. If you already know all that and just want the tool, jump to the <a href="../#quickstart">agkit quick start</a>.</p>
+			</div>
+		</section>
+
+		<!-- ========================== THE PROBLEM ========================== -->
+		<section class="section section-alt">
+			<div class="container container-narrow prose">
+				<p class="kicker">The problem</p>
+				<h2>Copy-pasting prompts does not scale</h2>
+
+				<p>Every serious user of an AI coding agent accumulates the same things: a prompt that enforces the team's test conventions, a slash command that opens a release checklist, a subagent that reviews migrations. They start life in one developer's config directory.</p>
+
+				<p>Then a teammate wants them. So the files get copy-pasted into a Slack thread, then into a Notion page, then into someone's dotfiles repo. Nobody knows which copy is current. When the convention changes, four copies drift apart, and the agent confidently applies the stale one.</p>
+
+				<p>A marketplace fixes the distribution problem the same way package managers did for libraries: <strong>one source of truth, versioned, installed by name</strong>. The catalog is committed to Git, so reviewing a change to a shared prompt becomes a pull request like any other.</p>
+			</div>
+		</section>
+
+		<!-- ======================= WHAT IS A PLUGIN ======================= -->
+		<section class="section">
+			<div class="container container-narrow prose">
+				<p class="kicker">Anatomy</p>
+				<h2>What is inside a plugin?</h2>
+
+				<p>A plugin is a versioned bundle with a manifest (<code>plugin.json</code>: name, version, description) and one or more capabilities. Most plugins ship exactly one — the bundle is the unit of <em>distribution</em>, not a container you are meant to fill.</p>
+
+				<div class="prose-table-wrap">
+					<table class="prose-table">
+						<thead>
+							<tr><th>Capability</th><th>Lives in</th><th>What it does</th></tr>
+						</thead>
+						<tbody>
+							<tr><td><strong>Skill</strong></td><td><code>skills/&lt;name&gt;/SKILL.md</code></td><td>Reference knowledge or a repeatable procedure the agent loads <em>on demand</em>, when its description matches the task.</td></tr>
+							<tr><td><strong>Command</strong></td><td><code>commands/&lt;name&gt;.md</code></td><td>A prompt shortcut the developer invokes explicitly, as <code>/&lt;name&gt;</code>.</td></tr>
+							<tr><td><strong>Subagent</strong></td><td><code>agents/&lt;name&gt;.md</code></td><td>A named specialist with its own role and instructions, that the main agent delegates to.</td></tr>
+							<tr><td><strong>Hook</strong></td><td><code>hooks/hooks.json</code></td><td>Deterministic automation on lifecycle events — run a formatter after every edit, for instance. Code, not a prompt: it always fires.</td></tr>
+							<tr><td><strong>MCP server</strong></td><td><code>.mcp.json</code></td><td>Bundles a Model Context Protocol server, giving the agent external tools.</td></tr>
+						</tbody>
+					</table>
+				</div>
+
+				<p>The distinction that trips people up most is <strong>skill versus command</strong>. A command is <em>pulled</em> — the developer types it. A skill is <em>pushed</em> — the agent decides to load it based on the description you wrote. Which is why a skill's description is the load-bearing part: it is what the agent reads to decide whether the skill is relevant at all.</p>
+			</div>
+		</section>
+
+		<!-- ===================== MARKETPLACE VS PLUGIN ===================== -->
+		<section class="section section-alt">
+			<div class="container container-narrow prose">
+				<p class="kicker">Disambiguation</p>
+				<h2>Skill, plugin, marketplace</h2>
+
+				<p>These three terms get used interchangeably, and they are not the same thing. From smallest to largest:</p>
+
+				<div class="duo">
+					<article class="duo-card">
+						<h3>Skill</h3>
+						<p>One capability. A single <code>SKILL.md</code> the agent loads when it is relevant. The atom.</p>
+					</article>
+					<article class="duo-card">
+						<h3>Plugin</h3>
+						<p>A versioned bundle of capabilities — skills, commands, subagents, hooks, MCP servers — with a manifest. The unit you install.</p>
+					</article>
+					<article class="duo-card">
+						<h3>Marketplace</h3>
+						<p>A catalog listing many plugins, so an agent can discover and install them. The unit you distribute.</p>
+					</article>
+				</div>
+
+				<p class="note">You do not need a marketplace to share <em>one</em> plugin — a standalone plugin repository works, and any catalog can reference it remotely. A marketplace pays off when you maintain several plugins, want a single install flow for a team, or need updates to propagate across a set.</p>
+			</div>
+		</section>
+
+		<!-- ====================== HOW AGENTS CONSUME ====================== -->
+		<section class="section">
+			<div class="container container-narrow prose">
+				<p class="kicker">Consumption</p>
+				<h2>How agents read a marketplace</h2>
+
+				<p>Here is the part the ecosystem has not settled yet, and the reason building a marketplace is more annoying than it should be: <strong>there is no shared standard</strong>. Agents fall into three groups.</p>
+
+				<p><strong>Some read a catalog natively.</strong> Claude Code and GitHub Copilot both read <code>.claude-plugin/marketplace.json</code> as it sits in your repository. A consumer runs <code>/plugin marketplace add owner/repo</code>, then <code>/plugin install &lt;name&gt;@&lt;marketplace&gt;</code>. Nothing to generate — push the repo and it installs.</p>
+
+				<p><strong>Some need their own registry.</strong> OpenAI Codex and Cursor look for a different file, in a different place, in a different shape — <code>.agents/plugins/marketplace.json</code> for Codex, <code>.cursor-plugin/</code> for Cursor. The plugin content is identical; only the index differs. So you commit a second (and third) registry describing the same plugins.</p>
+
+				<p><strong>Some have no marketplace concept at all.</strong> Windsurf reads <code>.windsurf/rules/</code> and <code>.windsurf/workflows/</code>; OpenCode reads <code>.opencode/skills/</code> (and, helpfully, <code>.claude/skills/</code>). These are local directories in the developer's own project — not something they can subscribe to. For those agents, "installing" means copying files into the consumer's workspace, which is a genuinely different model from publishing a catalog.</p>
+
+				<p>The practical consequence: keep <strong>one canonical catalog</strong> and <em>derive</em> the rest from it. Maintaining three registries by hand is how they drift — and a drifted registry is worse than no registry, because it fails at install time, on someone else's machine.</p>
+			</div>
+		</section>
+
+		<!-- ========================== HOW TO BUILD ========================== -->
+		<section class="section section-alt">
+			<div class="container container-narrow prose">
+				<p class="kicker">Getting started</p>
+				<h2>How to create a plugin marketplace</h2>
+
+				<p>You can absolutely do it by hand: create <code>.claude-plugin/marketplace.json</code>, add a <code>plugins/</code> directory, write a manifest per plugin, keep the catalog in sync as things change, and hand-maintain the per-agent registries. It is all plain JSON and Markdown — nothing is hidden from you.</p>
+
+				<p><strong>agkit</strong> is a CLI that does that part for you. It scaffolds a push-ready repository, adds plugins from templates, derives the per-agent registries from the canonical catalog, and keeps everything reconciled as plugins come and go:</p>
+
+				<pre class="mode-code"><code>npx agkit init my-marketplace
+cd my-marketplace
+npx agkit add skill tdd-coach
+npx agkit validate
+git push</code></pre>
+
+				<p>Once pushed, anyone can install from the repository with their agent's own command. Distribution is a plain <code>git push</code> to any forge — GitHub, GitLab, Bitbucket, Gitea, or self-hosted.</p>
+
+				<div class="cta-row">
+					<a class="btn btn-primary" href="../#quickstart">See the quick start</a>
+					<a class="btn btn-ghost" href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Read the docs</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============================= FAQ ============================= -->
+		<section class="section" id="faq">
+			<div class="container container-narrow prose">
+				<p class="kicker">FAQ</p>
+				<h2>Common questions</h2>
+
+				<div class="faq-list">
+					<details>
+						<summary>Is a plugin marketplace the same as an app store?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>No. Nothing is sold, reviewed or centrally hosted. A marketplace is a Git repository with a catalog file — closer to a Homebrew tap or an APT source than to an app store. There is no gatekeeper, and no publishing step beyond <code>git push</code>.</p>
+					</details>
+					<details>
+						<summary>Where is a plugin marketplace hosted?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>In a plain Git repository, on any forge — GitHub, GitLab, Bitbucket, Gitea or a self-hosted server. Agents fetch it over Git, so there is no registry to publish to and no account to create. On GitHub the <code>owner/repo</code> shorthand works; everywhere else the full git URL does.</p>
+					</details>
+					<details>
+						<summary>Do I need a marketplace to share a single plugin?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>No — a standalone plugin repository is enough, and any catalog can reference it remotely. A marketplace earns its keep when you maintain several plugins, want one install flow for a team, or need versioning across a set of them.</p>
+					</details>
+					<details>
+						<summary>Can one marketplace serve several agents?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>Yes, and that is the point of keeping a canonical catalog: the plugin content under <code>plugins/</code> is shared, and each agent's index is derived from it. Claude Code and GitHub Copilot read the canonical catalog directly; Codex and Cursor install from a generated registry. Agents with no marketplace concept — Windsurf, OpenCode, Kiro — cannot subscribe to a catalog at all today.</p>
+					</details>
+					<details>
+						<summary>How do teams get plugins automatically?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>Agents that support it read an <code>extraKnownMarketplaces</code> block from a settings file committed to the project — <code>.claude/settings.json</code> for Claude Code, <code>.github/copilot/settings.json</code> for GitHub Copilot. Teammates get the marketplace as soon as they trust the repository, with nothing to run.</p>
+					</details>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer class="footer">
+		<div class="container footer-inner">
+			<div class="footer-brand">
+				<img src="../assets/agkit.svg" alt="agkit logo" width="40" height="40" />
+				<div>
+					<strong>agkit</strong>
+					<p>Built for the age of AI coding agents.</p>
+				</div>
+			</div>
+			<nav class="footer-links" aria-label="Footer">
+				<a href="../">Home</a>
+				<a href="https://www.npmjs.com/package/agkit" target="_blank" rel="noopener">npm</a>
+				<a href="https://github.com/AGent-marketplace-KIT/cli" target="_blank" rel="noopener">GitHub</a>
+				<a href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Documentation</a>
+				<a href="https://github.com/AGent-marketplace-KIT/cli/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
+			</nav>
+			<div class="footer-meta">
+				<p>MIT © <a href="https://github.com/fair3n" target="_blank" rel="noopener">fair3n</a></p>
+				<p class="footer-disclaimer">Unofficial community tool — not affiliated with Anthropic, GitHub, OpenAI, or Cursor.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="../assets/main.js" defer></script>
+</body>
+</html>

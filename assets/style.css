@@ -636,9 +636,68 @@ h2 code { font-size: 0.85em; vertical-align: 2px; }
 }
 .duo-dot-green { background: #22c55e; box-shadow: 0 0 12px #22c55e; }
 .duo-dot-grad { background: var(--grad); box-shadow: 0 0 12px var(--purple); }
+.duo-dot-amber { background: #f59e0b; box-shadow: 0 0 12px #f59e0b; }
+
+.duo-card-muted { border-style: dashed; border-color: var(--line); }
 
 .duo-card h3 { margin-bottom: 8px; padding-right: 30px; }
 .duo-card p { color: var(--muted); margin: 0; font-size: 0.95rem; }
+
+/* ---------- Article / prose pages ---------- */
+.prose p { color: #c3cadb; margin: 0 0 18px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--text); }
+.prose a {
+	color: #a9b1ff;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+	text-decoration-color: rgba(99, 102, 241, 0.5);
+}
+.prose a:hover { color: #fff; text-decoration-color: var(--purple); }
+.prose .note { text-align: left; }
+.prose .duo { margin: 26px 0; }
+
+.crumbs {
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	color: var(--muted);
+	margin-bottom: 18px;
+}
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--text); }
+.crumbs span[aria-hidden] { margin: 0 8px; opacity: 0.5; }
+
+.lede { font-size: 1.18rem; color: var(--text) !important; margin: 0 0 24px; }
+
+.prose-table-wrap {
+	overflow-x: auto;
+	margin: 0 0 22px;
+	border: 1px solid var(--line-soft);
+	border-radius: var(--radius);
+}
+.prose-table {
+	border-collapse: collapse;
+	width: 100%;
+	min-width: 560px;
+	font-size: 0.93rem;
+}
+.prose-table th,
+.prose-table td {
+	text-align: left;
+	padding: 12px 16px;
+	border-bottom: 1px solid var(--line-soft);
+	vertical-align: top;
+}
+.prose-table thead th {
+	background: var(--panel);
+	color: var(--text);
+	font-weight: 700;
+	white-space: nowrap;
+}
+.prose-table td { color: var(--muted); }
+.prose-table tbody tr:last-child td { border-bottom: none; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 
 /* ---------- Terminal ---------- */
 
@@ -805,6 +864,8 @@ h2 code { font-size: 0.85em; vertical-align: 2px; }
 	padding: 0;
 	color: #c9cdff;
 	font-size: 0.84rem;
+	/* The global `code` rule sets nowrap, which would collapse newlines in multi-line blocks. */
+	white-space: pre;
 }
 
 /* ---------- FAQ ---------- */
