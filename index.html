@@ -5,33 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Primary SEO -->
-	<title>agkit — Plugin Marketplace CLI for Claude Code, Copilot, Codex &amp; Cursor</title>
+	<title>agmk — Plugin Marketplace CLI for Claude Code, Copilot, Codex &amp; Cursor</title>
 	<meta name="description" content="Scaffold and manage AI agent plugin marketplaces from one canonical catalog. One repo serves Claude Code, GitHub Copilot, OpenAI Codex and Cursor — distributed via GitHub, GitLab, Bitbucket, Gitea or any self-hosted Git forge." />
 	<link rel="canonical" href="https://agent-marketplace-kit.github.io/" />
 	<meta name="author" content="fair3n" />
-	<meta name="keywords" content="agkit, plugin marketplace, claude code plugins, claude code marketplace, github copilot plugins, openai codex plugins, cursor plugins, AI coding agents, CLI, scaffold, npm" />
+	<meta name="keywords" content="agmk, plugin marketplace, claude code plugins, claude code marketplace, github copilot plugins, openai codex plugins, cursor plugins, AI coding agents, CLI, scaffold, npm" />
 	<meta name="theme-color" content="#0B0F19" />
 	<meta name="color-scheme" content="dark" />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="agkit" />
-	<meta property="og:title" content="agkit — Plugin Marketplace CLI for AI Coding Agents" />
+	<meta property="og:site_name" content="agmk" />
+	<meta property="og:title" content="agmk — Plugin Marketplace CLI for AI Coding Agents" />
 	<meta property="og:description" content="One canonical catalog → every AI coding agent → any Git forge. Scaffold plugin marketplaces for Claude Code, GitHub Copilot, OpenAI Codex &amp; Cursor." />
 	<meta property="og:url" content="https://agent-marketplace-kit.github.io/" />
 	<meta property="og:image" content="https://agent-marketplace-kit.github.io/assets/og.png" />
 	<meta property="og:image:width" content="1200" />
 	<meta property="og:image:height" content="630" />
-	<meta property="og:image:alt" content="agkit — the isometric monolith logo with the tagline: one canonical catalog, every AI coding agent, any Git forge" />
+	<meta property="og:image:alt" content="agmk — the isometric monolith logo with the tagline: one canonical catalog, every AI coding agent, any Git forge" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="agkit — Plugin Marketplace CLI for AI Coding Agents" />
-	<meta name="twitter:description" content="One canonical catalog → every AI coding agent → any Git forge. npm install -g agkit" />
+	<meta name="twitter:title" content="agmk — Plugin Marketplace CLI for AI Coding Agents" />
+	<meta name="twitter:description" content="One canonical catalog → every AI coding agent → any Git forge. npm install -g @agmkit/cli" />
 	<meta name="twitter:image" content="https://agent-marketplace-kit.github.io/assets/og.png" />
 
 	<!-- Icons -->
-	<link rel="icon" type="image/svg+xml" href="assets/agkit.svg" />
+	<link rel="icon" type="image/svg+xml" href="assets/agmk.svg" />
 	<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
 	<!-- Fonts -->
@@ -46,12 +46,12 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
-		"name": "agkit",
-		"alternateName": "AGent marketplace KIT",
+		"name": "agmk",
+		"alternateName": "AGent Marketplace Kit",
 		"description": "CLI to scaffold and manage plugin marketplaces for AI coding agents (Claude Code, GitHub Copilot, OpenAI Codex, Cursor), distributed via any Git host.",
 		"url": "https://agent-marketplace-kit.github.io/",
-		"downloadUrl": "https://www.npmjs.com/package/agkit",
-		"installUrl": "https://www.npmjs.com/package/agkit",
+		"downloadUrl": "https://www.npmjs.com/package/@agmkit/cli",
+		"installUrl": "https://www.npmjs.com/package/@agmkit/cli",
 		"softwareVersion": "0.9.2",
 		"operatingSystem": "Windows, macOS, Linux",
 		"applicationCategory": "DeveloperApplication",
@@ -60,8 +60,8 @@
 		"author": { "@type": "Person", "name": "fair3n" },
 		"sameAs": [
 			"https://github.com/AGent-marketplace-KIT/cli",
-			"https://www.npmjs.com/package/agkit",
-			"https://agent-marketplace-kit.gitbook.io/agkit-docs"
+			"https://www.npmjs.com/package/@agmkit/cli",
+			"https://agent-marketplace-kit.gitbook.io/agmk-docs"
 		]
 	}
 	</script>
@@ -74,23 +74,23 @@
 		"mainEntity": [
 			{
 				"@type": "Question",
-				"name": "What is agkit?",
-				"acceptedAnswer": { "@type": "Answer", "text": "agkit is an open-source CLI (npm package) that scaffolds and manages plugin marketplaces for AI coding agents. Think ng for Angular, but for agent plugin marketplaces: init gives you a push-ready repository, and add, build, sync, bump and validate cover the whole life of the project afterwards." }
+				"name": "What is agmk?",
+				"acceptedAnswer": { "@type": "Answer", "text": "agmk is an open-source CLI (npm package) that scaffolds and manages plugin marketplaces for AI coding agents. Think ng for Angular, but for agent plugin marketplaces: init gives you a push-ready repository, and add, build, sync, bump and validate cover the whole life of the project afterwards." }
 			},
 			{
 				"@type": "Question",
-				"name": "Which AI coding agents does agkit support?",
-				"acceptedAnswer": { "@type": "Answer", "text": "One repository serves Claude Code, GitHub Copilot, OpenAI Codex and Cursor. Claude Code and GitHub Copilot read the canonical catalog natively; for Codex and Cursor, agkit build generates their committed registries from the same catalog. Gemini, OpenCode, Windsurf and Kiro are accepted by --agents but recorded as intent only — no artifacts are generated, so a marketplace is not installable from these agents yet." }
+				"name": "Which AI coding agents does agmk support?",
+				"acceptedAnswer": { "@type": "Answer", "text": "One repository serves Claude Code, GitHub Copilot, OpenAI Codex and Cursor. Claude Code and GitHub Copilot read the canonical catalog natively; for Codex and Cursor, agmk build generates their committed registries from the same catalog. Gemini, OpenCode, Windsurf and Kiro are accepted by --agents but recorded as intent only — no artifacts are generated, so a marketplace is not installable from these agents yet." }
 			},
 			{
 				"@type": "Question",
 				"name": "Do I need a build step?",
-				"acceptedAnswer": { "@type": "Answer", "text": "Not for Claude Code or GitHub Copilot — they read .claude-plugin/marketplace.json as-is. For OpenAI Codex and Cursor, run agkit build once; after that, add, bump and sync keep the generated registries fresh automatically." }
+				"acceptedAnswer": { "@type": "Answer", "text": "Not for Claude Code or GitHub Copilot — they read .claude-plugin/marketplace.json as-is. For OpenAI Codex and Cursor, run agmk build once; after that, add, bump and sync keep the generated registries fresh automatically." }
 			},
 			{
 				"@type": "Question",
 				"name": "Can I distribute my marketplace outside GitHub?",
-				"acceptedAnswer": { "@type": "Answer", "text": "Yes. agkit is forge-agnostic by design: distribute via GitHub, GitLab, Bitbucket, Gitea or any self-hosted Git forge with a plain git push. On github.com it uses the owner/repo shorthand; everywhere else it emits the git URL form, which every supported agent accepts." }
+				"acceptedAnswer": { "@type": "Answer", "text": "Yes. agmk is forge-agnostic by design: distribute via GitHub, GitLab, Bitbucket, Gitea or any self-hosted Git forge with a plain git push. On github.com it uses the owner/repo shorthand; everywhere else it emits the git URL form, which every supported agent accepts." }
 			},
 			{
 				"@type": "Question",
@@ -99,8 +99,8 @@
 			},
 			{
 				"@type": "Question",
-				"name": "Is agkit free?",
-				"acceptedAnswer": { "@type": "Answer", "text": "Yes — agkit is MIT-licensed and free to use. It requires Node.js 22 or newer, and you can run it without installing via npx agkit. It is an unofficial community tool, not affiliated with Anthropic, GitHub, OpenAI or Cursor." }
+				"name": "Is agmk free?",
+				"acceptedAnswer": { "@type": "Answer", "text": "Yes — agmk is MIT-licensed and free to use. It requires Node.js 22 or newer, and you can run it without installing via npx @agmkit/cli. It is an unofficial community tool, not affiliated with Anthropic, GitHub, OpenAI or Cursor." }
 			}
 		]
 	}
@@ -126,7 +126,7 @@
 
 	<header class="nav" id="top">
 		<div class="container nav-inner">
-			<a class="brand" href="#top" aria-label="agkit — home">
+			<a class="brand" href="#top" aria-label="agmk — home">
 				<svg class="brand-mark" viewBox="0 0 500 500" aria-hidden="true" focusable="false">
 					<g transform="translate(250, 250)">
 						<path d="M 0 0 L -100 -58 L -100 58 L 0 116 Z" fill="#121826" stroke="url(#g-brand)" stroke-width="16" stroke-linejoin="round" />
@@ -136,7 +136,7 @@
 						<line x1="30" y1="-23" x2="70" y2="-46" stroke="url(#g-brand)" stroke-width="22" stroke-linecap="round" />
 					</g>
 				</svg>
-				<span class="brand-name">agkit</span>
+				<span class="brand-name">agmk</span>
 			</a>
 			<nav class="nav-links" aria-label="Main navigation">
 				<a href="#features">Features</a>
@@ -144,14 +144,14 @@
 				<a href="#quickstart">Quick start</a>
 				<a href="#commands">Commands</a>
 				<a href="#faq">FAQ</a>
-				<a href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Docs</a>
+				<a href="https://agent-marketplace-kit.gitbook.io/agmk-docs" target="_blank" rel="noopener">Docs</a>
 			</nav>
 			<div class="nav-cta">
-				<a class="btn btn-ghost btn-sm" href="https://github.com/AGent-marketplace-KIT/cli" target="_blank" rel="noopener" aria-label="agkit on GitHub">
+				<a class="btn btn-ghost btn-sm" href="https://github.com/AGent-marketplace-KIT/cli" target="_blank" rel="noopener" aria-label="agmk on GitHub">
 					<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
 					GitHub
 				</a>
-				<a class="btn btn-primary btn-sm" href="https://www.npmjs.com/package/agkit" target="_blank" rel="noopener">npm</a>
+				<a class="btn btn-primary btn-sm" href="https://www.npmjs.com/package/@agmkit/cli" target="_blank" rel="noopener">npm</a>
 			</div>
 		</div>
 	</header>
@@ -164,10 +164,10 @@
 			<div class="hero-glow hero-glow-b" aria-hidden="true"></div>
 			<div class="container hero-inner">
 				<div class="hero-copy">
-					<p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> AGent marketplace KIT</p>
+					<p class="kicker"><span class="kicker-dot" aria-hidden="true"></span> AGent Marketplace Kit</p>
 					<h1>Ship a plugin marketplace for <span class="grad-text">every AI coding agent</span>.</h1>
 					<p class="hero-sub">
-						<strong>agkit</strong> scaffolds and manages plugin marketplaces for
+						<strong>agmk</strong> scaffolds and manages plugin marketplaces for
 						<strong>Claude Code</strong>, <strong>GitHub Copilot</strong>, <strong>OpenAI Codex</strong>
 						and <strong>Cursor</strong> — one canonical catalog, distributed through
 						<strong>any Git forge</strong> with a plain <code>git push</code>.
@@ -175,8 +175,8 @@
 
 					<div class="install-box" role="group" aria-label="Install command">
 						<span class="install-prompt" aria-hidden="true">$</span>
-						<code id="install-cmd">npm install -g agkit</code>
-						<button class="copy-btn" type="button" data-copy="npm install -g agkit" aria-label="Copy install command">
+						<code id="install-cmd">npm install -g @agmkit/cli</code>
+						<button class="copy-btn" type="button" data-copy="npm install -g @agmkit/cli" aria-label="Copy install command">
 							<svg class="ic-copy" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
 							<svg class="ic-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
 						</button>
@@ -184,21 +184,21 @@
 
 					<div class="hero-actions">
 						<a class="btn btn-primary" href="#quickstart">Get started</a>
-						<a class="btn btn-ghost" href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Read the docs</a>
+						<a class="btn btn-ghost" href="https://agent-marketplace-kit.gitbook.io/agmk-docs" target="_blank" rel="noopener">Read the docs</a>
 					</div>
 
 					<ul class="hero-badges" aria-label="Project facts">
 						<li>MIT license</li>
 						<li>Node ≥ 22</li>
 						<li>Zero lock-in</li>
-						<li><code>npx agkit</code> — nothing to install</li>
+						<li><code>npx @agmkit/cli</code> — nothing to install</li>
 					</ul>
 				</div>
 
 				<!-- Animated monolith illustration -->
 				<div class="hero-art" aria-hidden="false">
 					<svg class="monolith" viewBox="0 0 560 640" role="img" aria-labelledby="monolith-title">
-						<title id="monolith-title">The agkit monolith — an isometric cube engraved with a terminal chevron and cursor, plugin modules docking into its connection slot</title>
+						<title id="monolith-title">The agmk monolith — an isometric cube engraved with a terminal chevron and cursor, plugin modules docking into its connection slot</title>
 						<defs>
 							<linearGradient id="heroGrad" gradientUnits="userSpaceOnUse" x1="180" y1="430" x2="380" y2="190">
 								<stop offset="0" stop-color="#6366f1" />
@@ -309,7 +309,7 @@
 		<!-- =========================== FEATURES =========================== -->
 		<section id="features" class="section">
 			<div class="container">
-				<p class="kicker reveal">Why agkit</p>
+				<p class="kicker reveal">Why agmk</p>
 				<h2 class="reveal">Like <code>ng</code> for Angular — but for <span class="grad-text">agent plugin marketplaces</span></h2>
 				<p class="section-sub reveal"><code>init</code> gives you a push-ready repository; <code>add</code>, <code>build</code>, <code>sync</code>, <code>bump</code> and <code>validate</code> cover the whole life of the project afterwards.</p>
 
@@ -384,11 +384,11 @@
 			<div class="container">
 				<p class="kicker reveal">How it works</p>
 				<h2 class="reveal">One canonical catalog → <span class="grad-text">every agent</span> → any forge</h2>
-				<p class="section-sub reveal">agkit always writes one canonical catalog plus your plugins. How each agent reads it falls into three groups: native, generated by <code>agkit build</code>, or not supported yet. New to this? Start with <a href="/what-is-a-plugin-marketplace/">what a plugin marketplace is</a>.</p>
+				<p class="section-sub reveal">agmk always writes one canonical catalog plus your plugins. How each agent reads it falls into three groups: native, generated by <code>agmk build</code>, or not supported yet. New to this? Start with <a href="/what-is-a-plugin-marketplace/">what a plugin marketplace is</a>.</p>
 
 				<div class="pipeline-wrap reveal">
 					<svg class="pipeline" viewBox="0 0 980 470" role="img" aria-labelledby="pipeline-title">
-						<title id="pipeline-title">Diagram: agkit commands write a canonical catalog. Claude Code and GitHub Copilot read it natively; agkit build generates registries for OpenAI Codex and Cursor. Everything ships with git push to any forge, where consumers install the plugins.</title>
+						<title id="pipeline-title">Diagram: agmk commands write a canonical catalog. Claude Code and GitHub Copilot read it natively; agmk build generates registries for OpenAI Codex and Cursor. Everything ships with git push to any forge, where consumers install the plugins.</title>
 						<defs>
 							<linearGradient id="pipeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="470" x2="980" y2="0">
 								<stop offset="0" stop-color="#6366f1" />
@@ -423,7 +423,7 @@
 						<g class="pipe-node">
 							<rect x="24" y="196" width="184" height="78" rx="12" />
 							<text x="116" y="226" class="pipe-t-label" text-anchor="middle">you run</text>
-							<text x="116" y="250" class="pipe-t-mono" text-anchor="middle">agkit init · add</text>
+							<text x="116" y="250" class="pipe-t-mono" text-anchor="middle">agmk init · add</text>
 						</g>
 
 						<!-- Node: canonical catalog -->
@@ -457,7 +457,7 @@
 									<path d="M 0 -11 L 0 -7 M 0 7 L 0 11 M -11 0 L -7 0 M 7 0 L 11 0 M -7.8 -7.8 L -4.9 -4.9 M 4.9 4.9 L 7.8 7.8 M 7.8 -7.8 L 4.9 -4.9 M -4.9 4.9 L -7.8 7.8" stroke="url(#pipeGrad)" stroke-width="2" stroke-linecap="round" />
 								</g>
 							</g>
-							<text x="608" y="351" class="pipe-t-mono">agkit build</text>
+							<text x="608" y="351" class="pipe-t-mono">agmk build</text>
 							<text x="588" y="378" class="pipe-t-strong">OpenAI Codex</text>
 							<text x="588" y="396" class="pipe-t-strong">Cursor</text>
 						</g>
@@ -484,7 +484,7 @@
 					</article>
 					<article class="duo-card reveal">
 						<span class="duo-dot duo-dot-grad" aria-hidden="true"></span>
-						<h3>Generated — <code>agkit build</code></h3>
+						<h3>Generated — <code>agmk build</code></h3>
 						<p><strong>Codex</strong> and <strong>Cursor</strong> install from their own committed registry, derived from the same catalog. Run <code>build</code> once; <code>add</code> / <code>bump</code> / <code>sync</code> keep it fresh automatically.</p>
 					</article>
 					<article class="duo-card duo-card-muted reveal">
@@ -503,17 +503,17 @@
 				<h2 class="reveal">Your first marketplace in <span class="grad-text">four steps</span></h2>
 				<p class="section-sub reveal">Requires Node.js ≥ 22. Run it on demand with <code>npx</code> — nothing to install.</p>
 
-				<div class="terminal reveal" role="img" aria-label="Terminal session: npx agkit init my-marketplace, agkit add skill tdd-coach, agkit validate, then git push to distribute">
+				<div class="terminal reveal" role="img" aria-label="Terminal session: npx @agmkit/cli init my-marketplace, agmk add skill tdd-coach, agmk validate, then git push to distribute">
 					<div class="terminal-bar" aria-hidden="true">
 						<span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-						<span class="terminal-title">~/dev — agkit</span>
+						<span class="terminal-title">~/dev — agmk</span>
 					</div>
 					<div class="terminal-body" id="term">
-						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">npx agkit init my-marketplace</span> <span class="tcm"># 1 · scaffold a push-ready repo</span></div>
+						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">npx @agmkit/cli init my-marketplace</span> <span class="tcm"># 1 · scaffold a push-ready repo</span></div>
 						<div class="tline" data-type="out">◆ marketplace.json · plugins/ · AGENTS.md · CI — ready to push</div>
-						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">cd my-marketplace &amp;&amp; agkit add skill tdd-coach</span> <span class="tcm"># 2 · add a plugin</span></div>
+						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">cd my-marketplace &amp;&amp; agmk add skill tdd-coach</span> <span class="tcm"># 2 · add a plugin</span></div>
 						<div class="tline" data-type="out">◆ plugins/tdd-coach scaffolded · catalog + README updated</div>
-						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">agkit validate</span> <span class="tcm"># 3 · check the catalog</span></div>
+						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">agmk validate</span> <span class="tcm"># 3 · check the catalog</span></div>
 						<div class="tline" data-type="out">✔ catalog valid — 1 plugin, 0 errors</div>
 						<div class="tline" data-type="cmd"><span class="tp">$</span> <span class="tc">git push -u origin main</span> <span class="tcm"># 4 · distribute via git</span></div>
 						<div class="tline" data-type="out">🎉 anyone can now install your plugins straight from the repo</div>
@@ -533,35 +533,35 @@
 
 				<div class="cmd-grid">
 					<article class="cmd reveal">
-						<h3><code>agkit init</code></h3>
+						<h3><code>agmk init</code></h3>
 						<p>Scaffolds a git-first marketplace: catalog, <code>plugins/</code>, per-agent README, team settings, CI. <code>--plugin</code> scaffolds a standalone plugin instead.</p>
 					</article>
 					<article class="cmd reveal">
-						<h3><code>agkit add</code></h3>
+						<h3><code>agmk add</code></h3>
 						<p>Registers a plugin: reference a remote repo (no clone), vendor it with <code>--vendor</code>, or scaffold from a template — <code>skill</code>, <code>command</code>, <code>agent</code>, <code>hook</code>, <code>mcp</code>.</p>
 					</article>
 					<article class="cmd reveal">
-						<h3><code>agkit build</code></h3>
+						<h3><code>agmk build</code></h3>
 						<p>Generates the Codex and Cursor registries from the catalog. <code>--check</code> fails on drift — made for CI.</p>
 					</article>
 					<article class="cmd reveal">
-						<h3><code>agkit sync</code></h3>
+						<h3><code>agmk sync</code></h3>
 						<p>Reconciles the catalog with what's on disk: adds missing entries, fixes drift, flags orphans, regenerates docs and registries.</p>
 					</article>
 					<article class="cmd reveal">
-						<h3><code>agkit bump</code></h3>
+						<h3><code>agmk bump</code></h3>
 						<p>Bumps a plugin version from conventional commits, prepends a dated <code>CHANGELOG.md</code> entry, and can commit + tag with <code>--tag</code>.</p>
 					</article>
 					<article class="cmd reveal">
-						<h3><code>agkit validate</code></h3>
+						<h3><code>agmk validate</code></h3>
 						<p>Local checks plus delegation to <code>claude plugin validate</code> when available. Non-zero exit on error — CI-ready.</p>
 					</article>
 					<article class="cmd reveal">
-						<h3><code>agkit list</code></h3>
+						<h3><code>agmk list</code></h3>
 						<p>Lists the available plugin templates, built-in and local.</p>
 					</article>
 					<article class="cmd cmd-more reveal">
-						<a href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Full command reference →</a>
+						<a href="https://agent-marketplace-kit.gitbook.io/agmk-docs" target="_blank" rel="noopener">Full command reference →</a>
 					</article>
 				</div>
 			</div>
@@ -572,7 +572,7 @@
 			<div class="container">
 				<p class="kicker reveal">Adding plugins</p>
 				<h2 class="reveal">Reference. Vendor. <span class="grad-text">Scaffold.</span></h2>
-				<p class="section-sub reveal">A plugin can live inside your marketplace or stay in its own repo, fetched at install time. <code>agkit add</code> handles every case.</p>
+				<p class="section-sub reveal">A plugin can live inside your marketplace or stay in its own repo, fetched at install time. <code>agmk add</code> handles every case.</p>
 
 				<div class="modes">
 					<article class="mode reveal">
@@ -581,7 +581,7 @@
 							<h3>Reference <span class="mode-tag">default</span></h3>
 						</div>
 						<p>Catalog a remote plugin by reference — nothing is cloned; the agent fetches it at install time. Pin with <code>--ref</code> / <code>--sha</code>.</p>
-						<pre class="mode-code"><code>agkit add acme/deploy-plugin deploy</code></pre>
+						<pre class="mode-code"><code>agmk add acme/deploy-plugin deploy</code></pre>
 					</article>
 					<article class="mode reveal">
 						<div class="mode-head">
@@ -589,7 +589,7 @@
 							<h3>Vendor</h3>
 						</div>
 						<p>Clone a remote template into your repo so the plugin lives — and releases — with your marketplace.</p>
-						<pre class="mode-code"><code>agkit add gh:org/templates/kata kata --vendor</code></pre>
+						<pre class="mode-code"><code>agmk add gh:org/templates/kata kata --vendor</code></pre>
 					</article>
 					<article class="mode reveal">
 						<div class="mode-head">
@@ -597,7 +597,7 @@
 							<h3>Scaffold</h3>
 						</div>
 						<p>Start from a built-in or local template — or create a standalone plugin, no marketplace, with <code>init --plugin</code>.</p>
-						<pre class="mode-code"><code>agkit add skill tdd-coach</code></pre>
+						<pre class="mode-code"><code>agmk add skill tdd-coach</code></pre>
 					</article>
 				</div>
 			</div>
@@ -611,28 +611,28 @@
 
 				<div class="faq-list reveal">
 					<details>
-						<summary>What is agkit?<span class="faq-chev" aria-hidden="true"></span></summary>
-						<p>agkit is an open-source CLI (npm package) that scaffolds and manages plugin marketplaces for AI coding agents. Think <code>ng</code> for Angular, but for agent plugin marketplaces: <code>init</code> gives you a push-ready repository, and <code>add</code>, <code>build</code>, <code>sync</code>, <code>bump</code> and <code>validate</code> cover the whole life of the project afterwards.</p>
+						<summary>What is agmk?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>agmk is an open-source CLI (npm package) that scaffolds and manages plugin marketplaces for AI coding agents. Think <code>ng</code> for Angular, but for agent plugin marketplaces: <code>init</code> gives you a push-ready repository, and <code>add</code>, <code>build</code>, <code>sync</code>, <code>bump</code> and <code>validate</code> cover the whole life of the project afterwards.</p>
 					</details>
 					<details>
-						<summary>Which AI coding agents does agkit support?<span class="faq-chev" aria-hidden="true"></span></summary>
-						<p>One repository serves <strong>Claude Code</strong>, <strong>GitHub Copilot</strong>, <strong>OpenAI Codex</strong> and <strong>Cursor</strong>. Claude Code and GitHub Copilot read the canonical catalog natively; for Codex and Cursor, <code>agkit build</code> generates their committed registries from the same catalog. <strong>Gemini</strong>, <strong>OpenCode</strong>, <strong>Windsurf</strong> and <strong>Kiro</strong> are accepted by <code>--agents</code> but recorded as intent only — no artifacts are generated, so a marketplace is not installable from these agents yet.</p>
+						<summary>Which AI coding agents does agmk support?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>One repository serves <strong>Claude Code</strong>, <strong>GitHub Copilot</strong>, <strong>OpenAI Codex</strong> and <strong>Cursor</strong>. Claude Code and GitHub Copilot read the canonical catalog natively; for Codex and Cursor, <code>agmk build</code> generates their committed registries from the same catalog. <strong>Gemini</strong>, <strong>OpenCode</strong>, <strong>Windsurf</strong> and <strong>Kiro</strong> are accepted by <code>--agents</code> but recorded as intent only — no artifacts are generated, so a marketplace is not installable from these agents yet.</p>
 					</details>
 					<details>
 						<summary>Do I need a build step?<span class="faq-chev" aria-hidden="true"></span></summary>
-						<p>Not for Claude Code or GitHub Copilot — they read <code>.claude-plugin/marketplace.json</code> as-is. For OpenAI Codex and Cursor, run <code>agkit build</code> once; after that, <code>add</code>, <code>bump</code> and <code>sync</code> keep the generated registries fresh automatically.</p>
+						<p>Not for Claude Code or GitHub Copilot — they read <code>.claude-plugin/marketplace.json</code> as-is. For OpenAI Codex and Cursor, run <code>agmk build</code> once; after that, <code>add</code>, <code>bump</code> and <code>sync</code> keep the generated registries fresh automatically.</p>
 					</details>
 					<details>
 						<summary>Can I distribute my marketplace outside GitHub?<span class="faq-chev" aria-hidden="true"></span></summary>
-						<p>Yes. agkit is forge-agnostic by design: distribute via GitHub, GitLab, Bitbucket, Gitea or any self-hosted Git forge with a plain <code>git push</code>. On github.com it uses the <code>owner/repo</code> shorthand; everywhere else it emits the git URL form, which every supported agent accepts.</p>
+						<p>Yes. agmk is forge-agnostic by design: distribute via GitHub, GitLab, Bitbucket, Gitea or any self-hosted Git forge with a plain <code>git push</code>. On github.com it uses the <code>owner/repo</code> shorthand; everywhere else it emits the git URL form, which every supported agent accepts.</p>
 					</details>
 					<details>
 						<summary>How do consumers install my plugins?<span class="faq-chev" aria-hidden="true"></span></summary>
 						<p>With their agent's own command. Claude Code: <code>/plugin marketplace add owner/repo</code> then <code>/plugin install name@marketplace</code>. GitHub Copilot: <code>copilot plugin marketplace add</code>. OpenAI Codex: <code>codex plugin marketplace add</code>. Cursor: add the marketplace, then install the plugin by name.</p>
 					</details>
 					<details>
-						<summary>Is agkit free?<span class="faq-chev" aria-hidden="true"></span></summary>
-						<p>Yes — agkit is MIT-licensed and free to use. It requires Node.js ≥ 22, and you can run it without installing via <code>npx agkit</code>. It is an unofficial community tool, not affiliated with Anthropic, GitHub, OpenAI or Cursor.</p>
+						<summary>Is agmk free?<span class="faq-chev" aria-hidden="true"></span></summary>
+						<p>Yes — agmk is MIT-licensed and free to use. It requires Node.js ≥ 22, and you can run it without installing via <code>npx @agmkit/cli</code>. It is an unofficial community tool, not affiliated with Anthropic, GitHub, OpenAI or Cursor.</p>
 					</details>
 				</div>
 			</div>
@@ -653,14 +653,14 @@
 				<h2>Ship a marketplace, <span class="grad-text">not a config</span>.</h2>
 				<div class="install-box install-box-lg" role="group" aria-label="Init command">
 					<span class="install-prompt" aria-hidden="true">$</span>
-					<code>npx agkit init my-marketplace</code>
-					<button class="copy-btn" type="button" data-copy="npx agkit init my-marketplace" aria-label="Copy init command">
+					<code>npx @agmkit/cli init my-marketplace</code>
+					<button class="copy-btn" type="button" data-copy="npx @agmkit/cli init my-marketplace" aria-label="Copy init command">
 						<svg class="ic-copy" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
 						<svg class="ic-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
 					</button>
 				</div>
 				<div class="hero-actions">
-					<a class="btn btn-primary" href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Read the docs</a>
+					<a class="btn btn-primary" href="https://agent-marketplace-kit.gitbook.io/agmk-docs" target="_blank" rel="noopener">Read the docs</a>
 					<a class="btn btn-ghost" href="https://github.com/AGent-marketplace-KIT/cli" target="_blank" rel="noopener">Star on GitHub</a>
 				</div>
 			</div>
@@ -670,17 +670,17 @@
 	<footer class="footer">
 		<div class="container footer-inner">
 			<div class="footer-brand">
-				<img src="assets/agkit.svg" alt="agkit logo" width="40" height="40" />
+				<img src="assets/agmk.svg" alt="agmk logo" width="40" height="40" />
 				<div>
-					<strong>agkit</strong>
+					<strong>agmk</strong>
 					<p>Built for the age of AI coding agents.</p>
 				</div>
 			</div>
 			<nav class="footer-links" aria-label="Footer">
 				<a href="/what-is-a-plugin-marketplace/">What is a plugin marketplace?</a>
-				<a href="https://www.npmjs.com/package/agkit" target="_blank" rel="noopener">npm</a>
+				<a href="https://www.npmjs.com/package/@agmkit/cli" target="_blank" rel="noopener">npm</a>
 				<a href="https://github.com/AGent-marketplace-KIT/cli" target="_blank" rel="noopener">GitHub</a>
-				<a href="https://agent-marketplace-kit.gitbook.io/agkit-docs" target="_blank" rel="noopener">Documentation</a>
+				<a href="https://agent-marketplace-kit.gitbook.io/agmk-docs" target="_blank" rel="noopener">Documentation</a>
 				<a href="https://github.com/AGent-marketplace-KIT/cli/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Changelog</a>
 				<a href="https://github.com/AGent-marketplace-KIT/cli/issues" target="_blank" rel="noopener">Issues</a>
 			</nav>

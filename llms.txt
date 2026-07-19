@@ -1,16 +1,16 @@
-# agkit
+# agmk
 
-> agkit (AGent marketplace KIT) is an open-source CLI that scaffolds and manages plugin marketplaces for AI coding agents. You keep one canonical catalog (`.claude-plugin/marketplace.json`) plus your plugins under `plugins/<name>/`; agkit derives every per-agent artifact from it, and you distribute the whole thing with a plain `git push` to any Git forge.
+> agmk (AGent Marketplace Kit) is an open-source CLI that scaffolds and manages plugin marketplaces for AI coding agents. You keep one canonical catalog (`.claude-plugin/marketplace.json`) plus your plugins under `plugins/<name>/`; agmk derives every per-agent artifact from it, and you distribute the whole thing with a plain `git push` to any Git forge.
 
-agkit is an unofficial community tool, not affiliated with Anthropic, GitHub, OpenAI, or Cursor. MIT-licensed. Requires Node.js >= 22. Install with `npm install -g agkit`, or run it on demand with `npx agkit`.
+agmk is an unofficial community tool, not affiliated with Anthropic, GitHub, OpenAI, or Cursor. MIT-licensed. Requires Node.js >= 22. Install with `npm install -g @agmkit/cli`, or run it on demand with `npx @agmkit/cli`.
 
 ## Agent support (important — often misreported)
 
-agkit sorts target agents into three tiers. Only the first two are usable today:
+agmk sorts target agents into three tiers. Only the first two are usable today:
 
 - **Native (no build step):** Claude Code, GitHub Copilot. They read `.claude-plugin/marketplace.json` as-is. Push the repo and it installs.
-- **Generated registry (`agkit build`):** OpenAI Codex (`.agents/plugins/marketplace.json`), Cursor (`.cursor-plugin/`). agkit derives these committed registries from the canonical catalog.
-- **NOT SUPPORTED YET:** Gemini, OpenCode, Windsurf, Kiro. These ids are accepted by `--agents`, but agkit only records the intent in `metadata.targets` and writes install notes. **No artifacts are generated, so a marketplace is not installable from these agents.** They have no marketplace or registry concept — they read local file trees only — so supporting them requires a different distribution model, not just another generator.
+- **Generated registry (`agmk build`):** OpenAI Codex (`.agents/plugins/marketplace.json`), Cursor (`.cursor-plugin/`). agmk derives these committed registries from the canonical catalog.
+- **NOT SUPPORTED YET:** Gemini, OpenCode, Windsurf, Kiro. These ids are accepted by `--agents`, but agmk only records the intent in `metadata.targets` and writes install notes. **No artifacts are generated, so a marketplace is not installable from these agents.** They have no marketplace or registry concept — they read local file trees only — so supporting them requires a different distribution model, not just another generator.
 
 ## Commands
 
@@ -20,8 +20,8 @@ agkit sorts target agents into three tiers. Only the first two are usable today:
 
 - [Website](https://agent-marketplace-kit.github.io/): overview, how it works, quick start, FAQ
 - [What is a plugin marketplace?](https://agent-marketplace-kit.github.io/what-is-a-plugin-marketplace/): concepts — skill vs plugin vs marketplace, what a plugin contains, how each agent consumes a catalog
-- [Documentation](https://agent-marketplace-kit.gitbook.io/agkit-docs): full guides and command reference
-- [Target agents reference](https://agent-marketplace-kit.gitbook.io/agkit-docs/reference/target-agents): tiers, agent ids, per-agent install commands
+- [Documentation](https://agent-marketplace-kit.gitbook.io/agmk-docs): full guides and command reference
+- [Target agents reference](https://agent-marketplace-kit.gitbook.io/agmk-docs/reference/target-agents): tiers, agent ids, per-agent install commands
 - [Source](https://github.com/AGent-marketplace-KIT/cli): repository and README
-- [npm package](https://www.npmjs.com/package/agkit): releases
+- [npm package](https://www.npmjs.com/package/@agmkit/cli): releases
 - [Changelog](https://github.com/AGent-marketplace-KIT/cli/blob/main/CHANGELOG.md)

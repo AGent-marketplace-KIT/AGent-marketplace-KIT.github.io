@@ -1,4 +1,4 @@
-/* agkit showcase — interactions
+/* agmk showcase — interactions
    copy buttons · scroll reveal · terminal typing · motion prefs */
 (() => {
 	"use strict";
